@@ -64,16 +64,10 @@ for erro in erros :
     size = len(dataDic["datatime"]) *2
     for i in range(0,size,2):
         dataDic[erro].append(CI_values[i])
-#        if erro == "Wx":
-#            dataDic[erro].append(CI_values[i+1])
-#        else:
-#            dataDic[erro].append(CI_values[i])  
-#print(dataDic)
-#for column in columns:
-#    print(len(dataDic[column]),"-->",column)
+
 ins = "insert into data(時間,實際溫度,體感溫度,露點溫度,相對溼度,降雨機率,風向描述,天氣狀況,舒適度指數,風速)\
         values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-L = [] #裡面要是元組型態（"","",""...)
+L = [] #裡面是元組型態（"","",""...)
 tuple_list = zip(dataDic["datatime"],dataDic["T"],dataDic["AT"],dataDic["Td"],
                  dataDic["RH"],dataDic["PoP6h"],dataDic["WD"],dataDic["Wx"],
                  dataDic["CI"],dataDic["WS"])  
