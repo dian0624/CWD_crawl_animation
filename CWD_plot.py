@@ -105,7 +105,7 @@ def adjustData():
 
 def split_morn_night():
     low_y = np.ones(df["時間"].shape[0]+1)*-10
-    up_y = np.ones(df["時間"].shape[0]+1)*100
+    up_y = np.ones(df["時間"].shape[0]+1)*130
     morn = [18 >= int(i.strftime("%H")) >= 6 for i in df["時間"]]
     night = [((18 <= int(i.strftime("%H"))) or (int(i.strftime("%H")) <=6))for i in df["時間"]]
     
