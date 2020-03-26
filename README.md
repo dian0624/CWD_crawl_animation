@@ -80,38 +80,38 @@
 	
 		透過時間區段的判斷與加減，作為**fill_between**參數的調整，設定早上為紅色，晚上為藍色。
 		
-	3.創建y軸範圍設定方法
+	3. 創建y軸範圍設定方法
 	
 		以傳入列標籤名稱返回的y軸最大值與最小值正負4為y軸區間。
 		
-	4.創建圖片保存方法
+	4. 創建圖片保存方法
 	
 		傳入圖片標題名稱，以當前時間到結束時間作為字串拼接成圖片標題名稱。
 		
-	**5.未來兩天「體感溫度」圖**
+	5. **未來兩天「體感溫度」圖**
 	
 		特別設置**text標示點y值利用bbox設定文字背景**，以及畫製**點到x軸虛線**方便查看。
 		
 	![image](https://github.com/dian0624/CWD_crawl_animation/blob/master/CWD_github_image/1585192954278.jpg)
 		
-	**6. 未來兩天「體感溫度」與「降雨機率」圖**
+	6. **未來兩天「體感溫度」與「降雨機率」圖**
 	
 		使用subplot2grid同一視窗畫製2張圖表並制定子圖不同大小，為子圖共同設定一個標題。
 		
 	![image](https://github.com/dian0624/CWD_crawl_animation/blob/master/CWD_github_image/1585192978017.jpg)
 		
-	**7.未來兩天 天氣概況**
+	7. **未來兩天 天氣概況**
 	
 		使用subplot2grid同一視窗畫製3張圖表並制定子圖不同大小，為子圖共同設定一個標題，圖表內容「體感溫度」、「相對溼度」、「風速(m/s)」。
 	
 	![image](https://github.com/dian0624/CWD_crawl_animation/blob/master/CWD_github_image/1585192999695.jpg)
 
-	**8. 未來兩天「體感溫度」動態圖**
+	8. **未來兩天「體感溫度」動態圖**
 	
 		使用matplotlib中的animation函式製作動態圖。
 		![image]()
 	
-	**9.未來兩天 天氣概況 動態圖**
+	9. **未來兩天 天氣概況 動態圖**
 	
 		使用matplotlib中的animation函式製作動態圖。
 		![image]()
