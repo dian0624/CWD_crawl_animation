@@ -3,8 +3,8 @@
 # 項目:新北市新莊區未來2天天氣預報
 功能說明:
 
-	透過中央氣象局，**API串聯數據庫**抓取資料，進行**資料持久性儲存並且自動更新**，
-	使用jupyter notebook處理數據，最後進行**每日更新並可視化動態顯示**。
+透過中央氣象局，**API串聯數據庫**抓取資料，進行**資料持久性儲存並且自動更新**，
+使用jupyter notebook處理數據，最後進行**每日更新並可視化動態顯示**。
 	
 1.數據來源:
 	中央氣象局，API串聯數據庫:
@@ -62,15 +62,59 @@
 
 4. 資料處理以及資料可視化並且動態更新，最後匯聚成py檔讓windows工作排程器自動執行。
     
-        1.使用**drop_duplicates對重複數據進行去重**。
-        2.判斷以datetime.now()獲取目前時間，判斷數據抓取時段範圍是**當前時段加24小時(timedelta(hours=24))**。
-        3.型態轉換，時間、天氣狀況、風向描述不轉換型態，其他轉為int。
-        4.舒適度指數的分組。
-        5.製作圖表
-		1. 創建日期格式方法定義圖表x軸格式
-			使用**pd.Timedelta和pd.date_range做x軸的範圍縮放以及設定3小時為間隔**，設定**major主刻度格式、autofmt_xdate自動格式化顯示**。
+     1.使用**drop_duplicates對重複數據進行去重**。
+     
+     2.判斷以datetime.now()獲取目前時間，判斷數據抓取時段範圍是**當前時段加24小時(timedelta(hours=24))**。
+     
+     3.型態轉換，時間、天氣狀況、風向描述不轉換型態，其他轉為int。
+	
+     4.舒適度指數的分組。
+	
+     5.製作圖表
+	
+	1. **創建日期格式方法，定義圖表x軸格式**
+	
+		使用**pd.Timedelta和pd.date_range做x軸的範圍縮放以及設定3小時為間隔**，設定**major主刻度格式、autofmt_xdate自動格式化顯示**。
+		
+	2. **創建早晚時段區分方法**
+	
+		透過時間區段的判斷與加減，作為fill_between參數的調整，設定早上為紅色，晚上為藍色。
+		
+	3.創建y軸範圍設定方法
+	
+		以傳入列標籤名稱返回的y軸最大值與最小值正負4為y軸區間。
+		
+	4.創建圖片保存方法
+	
+		傳入圖片標題名稱，以當前時間到結束時間作為字串拼接成圖片標題名稱。
+		
+	**5.未來兩天「體感溫度」圖**
+	
+		特別設置**text標示點y值利用bbox設定文字背景**，以及畫製**點到x軸虛線**方便查看。
+		
+	![image](https://github.com/dian0624/CWD_crawl_animation/blob/master/CWD_github_image/1585192954278.jpg)
+		
+	**6. 未來兩天「體感溫度」與「降雨機率」圖**
+	
+		使用subplot2grid同一視窗畫製2張圖表並制定子圖不同大小，為子圖共同設定一個標題。
+		
+	![image](https://github.com/dian0624/CWD_crawl_animation/blob/master/CWD_github_image/1585192978017.jpg)
+		
+	**7.未來兩天 天氣概況**
+	
+		使用subplot2grid同一視窗畫製3張圖表並制定子圖不同大小，為子圖共同設定一個標題，圖表內容「體感溫度」、「相對溼度」、「風速(m/s)」。
+	
+	![image](https://github.com/dian0624/CWD_crawl_animation/blob/master/CWD_github_image/1585192999695.jpg)
 
-        
+	**8. 未來兩天「體感溫度」動態圖**
+	
+		使用matplotlib中的animation函式製作動態圖。
+		![image]()
+	
+	**9.未來兩天 天氣概況 動態圖**
+	
+		使用matplotlib中的animation函式製作動態圖。
+		![image]()
 	
 			
 
