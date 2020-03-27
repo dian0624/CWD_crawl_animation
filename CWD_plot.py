@@ -213,7 +213,6 @@ def update(frames):
     ydata2.append(y2)
     p1.set_ydata(ydata)
     p2.set_ydata(ydata2)
-    print(frames,"------",ydata)
     return p1,p2
   
 fig = plt.figure(figsize=(10,6),facecolor="#DDDDDD")
