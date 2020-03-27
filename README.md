@@ -96,30 +96,32 @@
 		
 	6. **未來兩天「體感溫度」與「降雨機率」圖**
 	
-		使用subplot2grid同一視窗畫製2張圖表並制定子圖不同大小，為子圖共同設定一個標題。
+		使用**subplot2grid**同一視窗畫製2張圖表並制定子圖不同大小，為子圖共同設定一個標題。
 		
 	![image](https://github.com/dian0624/CWD_crawl_animation/blob/master/CWD_github_image/1585192978017.jpg)
 		
 	7. **未來兩天 天氣概況**
 	
-		使用subplot2grid同一視窗畫製3張圖表並制定子圖不同大小，為子圖共同設定一個標題，圖表內容「體感溫度」、「相對溼度」、「風速(m/s)」。
+		使用**subplot2grid**同一視窗畫製3張圖表並制定子圖不同大小，為子圖共同設定一個標題，圖表內容「體感溫度」、「相對溼度」、「風速(m/s)」。
 	
 	![image](https://github.com/dian0624/CWD_crawl_animation/blob/master/CWD_github_image/1585192999695.jpg)
 
 	8. **未來兩天「體感溫度」動態圖**
 	
-		使用matplotlib中的animation函式製作動態圖。
+		使用**matplotlib中的animation**函式製作動態圖。
 		![image](https://github.com/dian0624/CWD_crawl_animation/blob/master/CWD_github_image/%E6%96%B0%E5%8C%97%E5%B8%82-%E6%96%B0%E8%8E%8A%E5%8D%80_2020-03-27-15%E6%9C%AA%E4%BE%86%E5%85%A9%E5%A4%A9%E3%80%8C%E9%AB%94%E6%84%9F%E6%BA%AB%E5%BA%A6%E3%80%8D.gif)
 	
 	9. **未來兩天「體感溫度」與「降雨機率」 動態圖**
 	
-		使用matplotlib中的animation函式製作動態圖。
+		使用**matplotlib中的animation**函式製作動態圖。
 		![image](https://github.com/dian0624/CWD_crawl_animation/blob/master/CWD_github_image/%E6%96%B0%E5%8C%97%E5%B8%82-%E6%96%B0%E8%8E%8A%E5%8D%80_2020-03-27-15.gif)
 	
 5.爬蟲程式定期執行
 
 	最後決定每次執行時只顯示**未來兩天 天氣概況圖**和**「體感溫度」與「降雨機率」動態圖**，設定.bat檔作為Windows工作排程器
 	每3個小時一個循環執行爬蟲更新數據庫資訊與顯示圖表、動態圖。
+	
+	![image](https://github.com/dian0624/CWD_crawl_animation/blob/master/CWD_github_image/1585277038682.jpg)
 
 
 
