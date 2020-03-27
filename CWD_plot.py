@@ -130,76 +130,6 @@ def ylim_range(title):
     ylim_min = df[title].min()-4
     return ylim_max,ylim_min
 
-#體感溫度走勢圖
-plt.figure(figsize=(15,6),facecolor="#DDDDDD")
-plt.plot(df["時間"],df["體感溫度"],"o--",c="#B22222",label="體感溫度")
-split_morn_night()
-plt.title("新北市-新莊區 未來兩天「體感溫度」圖",fontsize=25)
-plt.xlabel("時間",fontsize=20)
-plt.ylabel("攝氏溫度°C",fontsize=20)
-plt.tick_params(axis="x",labelsize=13)
-plt.tick_params(axis="y",labelsize=15)
-body_max,body_min = ylim_range("體感溫度")
-plt.ylim(body_min,body_max)
-bboxTuple = (dict(facecolor="#666666",edgecolor="orange",alpha=0.2),
-            dict(facecolor="red",edgecolor="blue",alpha=0.1))
-for x, y in zip(df["時間"],df["體感溫度"]):
-    xPossition = x - pd.Timedelta(hours=0.3)
-    plt.text(xPossition, y+0.65, y,fontsize=13,bbox=bboxTuple[0], color="#5500DD")
-    plt.plot([x,x],[0,y],linestyle="--",alpha=0.3)
-adjustData()
-plt.tight_layout()
-plt.grid(linestyle=":")
-plt.legend(prop={"size":16})
-#匯出
-# save_image("「體感溫度」圖")
-plt.close()
-
-
-
-# 新北市-新莊區 未來兩天「體感溫度」與「降雨機率」圖
-total = plt.figure(figsize=(16,10),facecolor="#DDDDDD")
-total.tight_layout()
-total.suptitle("新北市-新莊區 未來兩天「體感溫度」與「降雨機率」圖 ",fontsize=25)
-
-ax0 = plt.subplot2grid((3,1),(0,0),rowspan=2)
-ax0.plot(df["時間"],df["體感溫度"],"o--",c="#B22222",label="體感溫度")
-split_morn_night()
-plt.ylabel("攝氏溫度°C",fontsize=20)
-plt.tick_params(axis="x",labelsize=13)
-plt.tick_params(axis="y",labelsize=15)
-plt.ylim(body_min,body_max)
-bboxTuple = (dict(facecolor="#666666",edgecolor="orange",alpha=0.2),
-            dict(facecolor="red",edgecolor="blue",alpha=0.1))
-for x, y in zip(df["時間"],df["體感溫度"]):
-    xPossition = x - pd.Timedelta(hours=0.3)
-    plt.text(xPossition, y+0.65, y,fontsize=13,bbox=bboxTuple[0], color="#5500DD")
-    plt.plot([x,x],[0,y],linestyle="--",alpha=0.2)
-    
-adjustData()
-plt.grid(axis="y",linestyle=":")
-plt.legend(prop={"size":16})
-
-ax2 = plt.subplot2grid((3,1),(2,0),rowspan=1)
-ax2.plot(df["時間"],df["降雨機率%"],"o--",c="#483D8B",label="降雨機率%")
-
-for x, y in zip(df["時間"],df["降雨機率%"]):
-    xPossition = x - pd.Timedelta(hours=0.3)
-    plt.text(xPossition, y+8, y,fontsize=13,bbox=bboxTuple[0], color="#880000")
-    plt.plot([x,x],[0,y],linestyle="--",alpha=0.2)
-    
-split_morn_night()
-plt.xlabel("時間",fontsize=23)
-plt.ylabel("降雨機率%",fontsize=20)
-plt.tick_params(axis="x",labelsize=13)
-adjustData()
-plt.ylim(-5,100)
-plt.grid(axis="y",linestyle="--",alpha=0.5)
-plt.legend(prop={"size":15})
-#匯出
-# save_image("「體感溫度」與「降雨機率」圖")
-plt.close()
-
 #新北市-新莊區 未來兩天 天氣概況
 total = plt.figure(figsize=(15,6),facecolor="#DDCCCC")
 total.tight_layout()
@@ -285,8 +215,7 @@ def update(frames):
     p2.set_ydata(ydata2)
     print(frames,"------",ydata)
     return p1,p2
-
-
+  
 fig = plt.figure(figsize=(10,6),facecolor="#DDDDDD")
 ax = plt.subplot2grid((3,1),(0,0),rowspan=2)
 xdata, ydata = [],[]
@@ -317,4 +246,4 @@ plt.legend(prop={"size":15})
 frames = list(range(17))
 anim = ma.FuncAnimation(fig,update,frames=frames ,interval=50, init_func=init,repeat=False)
 plt.show(block=False)
-plt.pause(3)
+plt.pause(5)
