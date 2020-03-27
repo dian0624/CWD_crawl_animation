@@ -109,12 +109,12 @@
 	8. **未來兩天「體感溫度」動態圖**
 	
 		使用matplotlib中的animation函式製作動態圖。
-		![image]()
+		![image](https://github.com/dian0624/CWD_crawl_animation/blob/master/CWD_github_image/%E6%96%B0%E5%8C%97%E5%B8%82-%E6%96%B0%E8%8E%8A%E5%8D%80_2020-03-27-15%E6%9C%AA%E4%BE%86%E5%85%A9%E5%A4%A9%E3%80%8C%E9%AB%94%E6%84%9F%E6%BA%AB%E5%BA%A6%E3%80%8D.gif)
 	
 	9. **未來兩天「體感溫度」與「降雨機率」 動態圖**
 	
 		使用matplotlib中的animation函式製作動態圖。
-		![image]()
+		![image](https://github.com/dian0624/CWD_crawl_animation/blob/master/CWD_github_image/%E6%96%B0%E5%8C%97%E5%B8%82-%E6%96%B0%E8%8E%8A%E5%8D%80_2020-03-27-15.gif)
 	
 5.爬蟲程式定期執行
 
