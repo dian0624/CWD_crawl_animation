@@ -317,8 +317,6 @@ plt.legend(prop={"size":15})
 frames = list(range(17))
 anim = ma.FuncAnimation(fig,update,frames=frames ,interval=50, init_func=init,repeat=False)
 plt.show(block=False)
-# image_name = "-".join(now_time.split(" "))[:13]
-# anim.save('./image/新北市-新莊區_%s.gif'%(image_name),writer='pillow')
 plt.pause(3)
 plt.close()
 
