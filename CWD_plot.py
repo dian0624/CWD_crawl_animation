@@ -194,7 +194,6 @@ adjustData()
 plt.legend(prop={"size":12})
 #匯出
 # save_image("天氣概況")
-plt.close()
 
 # matplotlib animation 動態圖
 def init():
