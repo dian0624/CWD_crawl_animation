@@ -318,5 +318,3 @@ frames = list(range(17))
 anim = ma.FuncAnimation(fig,update,frames=frames ,interval=50, init_func=init,repeat=False)
 plt.show(block=False)
 plt.pause(3)
-plt.close()
-
